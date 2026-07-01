@@ -1,0 +1,13 @@
+@theme "~/.config/rofi/themes/material-colors.rasi"
+
+* {
+    bg0:    @shadow;
+    bg1:    @shadow;
+    bg2:    #3D3D3D80;
+    bg3:    @inverse-primary;
+    fg0:    @on-surface;
+    fg1:    #FFFFFF;
+    fg2:    @inverse-primary;
+    fg3:    @surface;
+}
+

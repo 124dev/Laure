@@ -1,0 +1,199 @@
+/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
+/* Catppuccin Mocha */
+@import '../../.cache/wal/colors-waybar.css';
+@import "colors.css";
+#tray {
+    -gtk-icon-style: symbolic;
+}
+* {
+    font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free", sans-serif;
+  font-weight: bold;
+  font-size: 10;
+  font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+}
+
+/* Global module styling */
+#custom-idle_inhibitor,
+#workspaces,
+#window,
+#custom-cpuinfo,
+#memory,
+#custom-cpu,
+#clock,
+#custom-wifi,
+#network,
+#tray,
+#privacy,
+#language,
+#pulseaudio,
+#custom-backlight,
+#power-profiles-daemon,
+#battery,
+#custom-power {
+  opacity: 1;
+  padding: 0px 2px;
+  margin: 0px 3px;
+    padding: 2px;
+}
+
+#bluetooth,
+#network, 
+#battery,
+#custom-playerinfo,
+#custom
+{
+  color: white;
+}
+
+
+window#waybar {
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  background: @background;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+#workspaces {
+  padding-left: 10px;
+  border-radius: 0;
+}
+
+
+#taskbar button,
+#workspaces button {
+  color: @primary;
+  border-radius: 0;
+  box-shadow: none;
+  text-shadow: none;
+  padding: 0;
+  animation: gradient_f 20s ease-in infinite;
+}
+
+#workspaces button.persistent {
+  color: #ffffff;
+  border-radius: 0;
+}
+
+#taskbar button.active,
+#workspaces button.active {
+  color: @primary;
+  animation: gradient_f 20s ease-in infinite;
+}
+
+/* Module container styling */
+.modules-left,
+.modules-right {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.modules-left > #cpu {
+  border-radius: 10px 0 0 10px;
+}
+
+.modules-left > #memory {
+  border-radius: 0 10px 10px 0;
+}
+
+.modules-left > widget,
+.modules-center > widget,
+.modules-right > widget {
+  border-radius: 14px;
+}
+
+/* Color indicators */
+#custom-hypridle.notactive,
+#idle_inhibitor.activated {
+  color: #39FF14;
+}
+
+#bluetooth,
+#backlight {
+  color: #e9e9e9;
+}
+
+#battery {
+  color: #e9e9e9;
+}
+
+#tooltip {
+  background-color: @background;
+}
+
+#pulseaudio {
+  color: #e9e9e9;
+}
+
+#clock {
+  color: white;
+}
+
+#custom-cava {
+  color: @primary;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-right: 5px;
+}
+
+#custom-playerinfo {
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-right: 5px;
+}
+
+#cpu {
+  color: #e9e9e9;
+}
+
+#disk {
+  color: #e9e9e9;
+}
+
+#window {
+  color: #e9e9e9;
+}
+
+
+#network {
+  color: #e9e9e9;
+}
+
+#memory {
+  color: #e9e9e9;
+}
+
+#custom-power {
+  color: @primary;
+  margin-right: 10px;
+}
+
+#power-profiles-daemon {
+  padding-right: 6px;
+}
+
+/* Slider styling */
+#backlight-slider slider,
+#pulseaudio-slider slider {
+  min-width: 0px;
+  min-height: 0px;
+  opacity: 0;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+}
+
+#backlight-slider trough,
+#pulseaudio-slider trough {
+  min-width: 80px;
+  min-height: 5px;
+  border-radius: 5px;
+}
+
+#backlight-slider highlight,
+#pulseaudio-slider highlight {
+  min-height: 10px;
+  border-radius: 5px;
+}

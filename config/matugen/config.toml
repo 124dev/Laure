@@ -1,0 +1,62 @@
+[config.wallpaper]
+command = "swww"
+arguments = ["img", "--transition-type", "center", "--transition-step", "15", "--transition-fps", "60"]
+
+set = false
+
+[templates.hyprland]
+input_path = '~/.config/matugen/templates/hyprland-colors.conf'
+output_path = '~/.config/hypr/colors.conf'
+post_hook = 'hyprctl reload'
+
+[templates.kitty]
+input_path = '~/.config/matugen/templates/kitty-colors.conf'
+output_path = '~/.config/kitty/colors.conf'
+post_hook = 'pkill -SIGUSR1 kitty'
+
+[templates.waybar]
+input_path = '~/.config/matugen/templates/colors.css'
+output_path = '~/.config/waybar/colors.css'
+[templates.cava]
+input_path = '~/.config/matugen/templates/cava-colors.ini'
+output_path = '~/.config/cava/themes/solarized_dark'
+post_hook = "pkill -USR1 cava"
+[templates.gtk3]
+input_path = '~/.config/matugen/templates/gtk-colors.css'
+output_path = '~/.config/gtk-3.0/gtk.css'
+
+[templates.swaync]
+input_path = '~/.config/matugen/templates/colors.css'
+output_path = '~/.config/swaync/colors.css'
+post_hook = 'swaymsg reload'
+
+[templates.alacritty]
+input_path = '~/.config/matugen/templates/alacritty.toml'
+output_path = '~/.config/alacritty/colors.toml'
+[templates.discord]
+input_path = '~/.config/matugen/templates/midnight-discord.css'
+output_path = '~/.config/Vencord/themes/midnight-discord.css'
+[templates.obs]
+input_path= '~/.config/matugen/templates/matugen.obt'
+output_path = '~/.config/obs-studio/themes/matugen.obt'
+# VS Code matugen extension
+[templates.vscode-raw]
+input_path = '~/.config/matugen/templates/vscode-colors'
+output_path = '~/.cache/matugen/vscode-colors'
+
+[templates.vscode-json]
+input_path = '~/.config/matugen/templates/vscode-colors.json'
+output_path = '~/.cache/matugen/vscode-colors.json'
+
+[templates.rofi]
+input_path = '~/.config/matugen/templates/rofi-colors.rasi'
+output_path = '~/.config/rofi/themes/material-colors.rasi'
+
+[templates.spotify]
+input_path='~/.config/matugen/templates/spicetify.ini'
+output_path = '~/.config/spicetify/Themes/Sleek/color.ini'
+
+[templates.pywalfox]
+input_path = '~/.config/matugen/templates/pywalfox-colors.json'
+output_path = '~/.cache/wal/colors.json'
+post_hook = "pywalfox update"

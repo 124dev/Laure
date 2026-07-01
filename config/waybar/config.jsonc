@@ -1,0 +1,246 @@
+
+{
+    "layer":"top",
+    "position":"top",
+    "height":0,
+    "spacing":0,
+    "margin-top":2,
+    "margin-right":10,
+    "margin-bottom":2,
+    "margin-left":10,
+    "mode": "dock",
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  "reload_style_on_change": true,
+
+
+    "modules-left":[
+        "hyprland/workspaces",
+	"hyprland/window"
+    ],
+    "modules-center": [
+    "custom/cpu",
+    "custom/cpuinfo",
+    "memory",
+    "clock#time",
+    "clock#date"
+  ],
+    "modules-right":[
+      "custom/playerinfo",
+	"custom/cava",
+  "pulseaudio",
+  "bluetooth",
+  "network",
+  "battery",
+	"custom/power"
+   ],
+
+   "hyprland/workspaces": {
+    "disable-scroll": false,
+    "tooltip": false,
+    "on-scroll-up": "hyprctl dispatch workspace -1",
+    "on-scroll-down": "hyprctl dispatch workspace +1",
+    "sort-by-number": true,
+    "persistent-workspaces": {
+      "*": [ 1, 2, 3, 4, 5, 6 ]
+    }
+  },
+"power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    },
+    "min-length": 2,
+    "max-length": 2
+  },
+  "tray": {
+    "icon-size": 13,
+    "rotate": 0,
+    "spacing": 10
+  },
+
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 20
+    },
+    "format": "{icon} {capacity}%",
+    "format-icons": [
+      "󰂎",
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
+    ],
+    "format-charging": "󱘖 {capacity}%",
+    "tooltip": true,
+    "tooltip-format": "Time to Empty: {time}",
+    "tooltip-format-charging": "Time to Full: {time}",
+    "interval": 5,
+    "min-length": 6,
+    "max-length": 6
+  },
+  "hyprland/window":{
+	"format":"{title:.80}",
+  	"max-length":40,
+	"seperate-outputs":true
+  },
+
+
+
+
+
+  "custom/cpu": {
+    "exec": "~/Laure/scripts/waybar/cpu-usage.sh",
+    "return-type": "json",
+    "on-click": "missioncenter",
+    "tooltip": true,
+    "interval": 5,
+    "min-length": 6,
+    "max-length": 6
+  },
+  "custom/cpuinfo": {
+    "exec": "~/Laure/scripts/waybar/cpu-info.sh",
+    "return-type": "json",
+    "format": "{}",
+    "on-click": "psensor",
+    "tooltip": true,
+    "interval": 5,
+    "min-length": 6,
+    "max-length": 6
+  },
+
+  "memory": {
+    "states": {
+      "c": 90
+    },
+    "format": "󰘚 {percentage}%",
+    "format-c": "󰀪 {percentage}%",
+    "tooltip": true,
+    "tooltip-format": "Memory Used: {used:0.1f} GB / {total:0.1f} GB",
+    "interval": 5,
+    "on-click": "kitty sh -c btop",
+    "min-length": 6,
+    "max-length": 6
+  },
+
+  "custom/cava": {
+        "format": "{}",
+        "exec": "~/Laure/scripts/waybar/cava.sh"
+    },
+    "custom/playerinfo": {
+        "format": "{}",
+        "exec": "~/Laure/scripts/waybar/cava-playerinfo.sh",
+        "interval": 1,
+        "tooltip": true,
+        "max-length": 40
+        
+    },
+
+
+"clock#time": {
+    "format": "󱑂 {:%I:%M}",
+    "tooltip": true,
+    "on-click": "gnome-clocks",
+    "min-length": 7,
+    "max-length": 10
+  },
+
+  "clock#date": {
+    "format": "󰨳 {:%m-%d}",
+    "tooltip-format": "<tt>{calendar}</tt>",
+    
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 4,
+      "on-click-right": "mode",
+      "format": {
+        "today": "<span color='#a6e3a1'><b>{}</b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    },
+    "on-click": "gnome-calendar",
+    "min-length": 7,
+    "max-length": 10
+  },
+
+"bluetooth": {
+    "format": " {status}",
+    "format-disabled": "󰂲 Off",
+    "format-no-controller": "󰂲 No Adapter",
+    "format-connected": " {device_alias}",
+    "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+    "tooltip-format": "{controller_alias}",
+    "tooltip-format-connected": "{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "on-click": "~/Laure/scripts/waybar/bluetooth-control.sh t"
+},
+   "network": {
+    "interval": 5,
+    "format": "󰖩 {}",
+    "format-alt": " {bandwidthUpBytes}  {bandwidthDownBytes}",
+    "format-disconnected": "",
+    "tooltip-format": "  {ifname} \n {bandwidthUpBytes}  {bandwidthDownBytes}",
+    "tooltip-format-wifi": "󰖩 {essid} ({signalStrength}%) \n {bandwidthUpBytes}  {bandwidthDownBytes}",
+    "tooltip-format-disconnected": "Disconnected",
+    "on-click-right": "portmaster",
+    "max-length": 24
+  },
+
+   "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟 {volume}%",
+    "format-icons": {
+      "headphone": "󰋋",
+      "default": [
+        "󰕿",
+        "󰖀",
+        "󰕾"
+      ]
+    },
+    "tooltip": true,
+    "tooltip-format": "{desc} - {volume}%",
+    "on-click": "~/Laure/scripts/waybar/volume-control.sh m",
+    "on-click-right": "pavucontrol",
+    "on-scroll-up": "~/Laure/scripts/waybar/volume-control.sh i",
+    "on-scroll-down": "~/Laure/scripts/waybar/volume-control.sh d",
+    "min-length": 6,
+    "max-length": 6
+  },
+
+  "pulseaudio#microphone": {
+    "format": "{format_source}",
+    "rotate": 0,
+    "format-source": "󰍬",
+    "format-source-muted": "󰍭",
+    "tooltip": true,
+    "tooltip-format": "{source_desc} - {source_volume}%",
+    "on-click": "~/Laure/scripts/waybar/mic-control.sh m",
+    "on-click-right": "easyeffects",
+    "on-scroll-up": "~/Laure/scripts/waybar/mic-control.sh i",
+    "on-scroll-down": "~/Laure/scripts/waybar/mic-control.sh d",
+    "min-length": 2,
+    "max-length": 2
+  },
+  "custom/power":{
+   "format":"",
+   "tooltip":false,
+   "on-click": "~/Laure/scripts/waybar/powermenu.sh ",
+  }
+}

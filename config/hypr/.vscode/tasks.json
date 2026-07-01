@@ -1,0 +1,17 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Auto-start VS Code Pets",
+            "type": "shell",
+            "command": "${command:vscode-pets.start}",
+            "presentation": {
+                "reveal": "never",
+                "panel": "shared"
+            },
+            "runOptions": {
+                "runOn": "folderOpen"
+            }
+        }
+    ]
+}
