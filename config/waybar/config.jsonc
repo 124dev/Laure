@@ -192,7 +192,8 @@
     "tooltip-format": "{controller_alias}",
     "tooltip-format-connected": "{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}",
-    "on-click": "~/Laure/scripts/waybar/bluetooth-control.sh t"
+    "on-click": "~/Laure/scripts/waybar/bluetooth-control.sh t",
+    "on-click-right": "blueman-manager"
 },
    "network": {
     "interval": 5,
@@ -202,7 +203,7 @@
     "tooltip-format": "  {ifname} \n {bandwidthUpBytes}  {bandwidthDownBytes}",
     "tooltip-format-wifi": "󰖩 {essid} ({signalStrength}%) \n {bandwidthUpBytes}  {bandwidthDownBytes}",
     "tooltip-format-disconnected": "Disconnected",
-    "on-click-right": "portmaster",
+    "on-click-right": "nm-connection-editor",
     "max-length": 24
   },
 
