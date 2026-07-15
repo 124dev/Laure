@@ -16,6 +16,7 @@
 
 
     "modules-left":[
+      "custom/name",
         "hyprland/workspaces",
 	"hyprland/window"
     ],
@@ -100,7 +101,9 @@
 
 
 
-
+  "custom/name": {
+    "format": "アーチ12"
+  },
 
   "custom/cpu": {
     "exec": "~/Laure/scripts/waybar/cpu-usage.sh",

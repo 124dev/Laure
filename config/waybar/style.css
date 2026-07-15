@@ -13,6 +13,7 @@
 }
 
 /* Global module styling */
+#custom-name,
 #custom-idle_inhibitor,
 #workspaces,
 #window,
@@ -55,9 +56,11 @@ window#waybar {
 window#waybar.hidden {
   opacity: 0.2;
 }
-
+#custom-name {
+    padding-left: 10px;
+}
 #workspaces {
-  padding-left: 10px;
+
   border-radius: 0;
 }
 
