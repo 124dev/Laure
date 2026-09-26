@@ -1,6 +1,5 @@
 /* ---- 💫 https://github.com/JaKooLit 💫 ---- */
 /* Catppuccin Mocha */
-@import '../../.cache/wal/colors-waybar.css';
 @import "colors.css";
 #tray {
     -gtk-icon-style: symbolic;
