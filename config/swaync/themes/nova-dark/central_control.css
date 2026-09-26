@@ -1,0 +1,239 @@
+
+@import "colors.css";
+
+
+* {
+  color:            @source_color;
+
+  all: unset;
+  font-size: 13px;
+  font-family: "JetBrains Mono Nerd Font 10";
+  transition: 200ms;
+
+}
+
+/* Avoid 'annoying' backgroud */
+.blank-window {  
+  background: transparent;  
+}
+  
+/* CONTROL CENTER ------------------------------------------------------------------------ */
+
+.control-center {
+  background: alpha(@shadow, .55);
+  border-radius: 24px;
+  border: 1px solid @source_color;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,.6);
+  margin: 18px;
+  padding: 12px;
+}
+
+/* Notifications  */
+.control-center .notification-row .notification-background,
+.control-center .notification-row .notification-background .notification.critical {
+  background-color: @background-alt;
+  border-radius: 16px;
+  margin: 4px 0px;
+  padding: 4px;
+}
+
+.control-center .notification-row .notification-background .notification.critical {
+  color: @surface;
+}
+
+.control-center .notification-row .notification-background .notification .notification-content {
+  margin: 6px;
+  padding: 8px 6px 2px 2px;
+}
+
+.control-center .notification-row .notification-background .notification > *:last-child > * {
+  min-height: 3.4em;
+}
+
+.control-center .notification-row .notification-background .notification > *:last-child > * .notification-action {
+  background: alpha(@souce_color, .6);
+  color: @text;
+  border-radius: 12px;
+  margin: 6px;
+}
+
+.control-center .notification-row .notification-background .notification > *:last-child > * .notification-action:hover {
+  background: @souce_color;
+}
+
+.control-center .notification-row .notification-background .notification > *:last-child > * .notification-action:active {
+  background-color: @souce_color;
+}
+
+/* Buttons */
+
+.control-center .notification-row .notification-background .close-button {
+  background: transparent;
+  border-radius: 6px;
+  color: white;
+  margin: 0px;
+  padding: 4px;
+}
+
+
+progressbar,
+progress,
+trough {
+  border-radius: 12px;
+}
+
+progressbar {
+  background-color: rgba(255,255,255,.1);
+}
+
+/* Notifications expanded-group */
+
+.notification-group {
+  margin: 2px 8px 2px 8px;
+
+}
+.notification-group-headers {
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: @primary;
+  letter-spacing: 2px;
+}
+
+.notification-group-icon {
+  color: @primary;
+}
+
+.notification-group-collapse-button,
+.notification-group-close-all-button {
+  background: transparent;
+  color: @primary;
+  margin: 4px; 
+  border-radius: 6px;
+  padding: 4px;
+}
+
+.notification-group-collapse-button:hover,
+.notification-group-close-all-button:hover {
+  background: @primary;
+}  
+
+/* WIDGETS --------------------------------------------------------------------------- */
+
+  /* Notification clear button */
+.widget-title {
+  font-size: 1.2em;
+  margin: 6px;
+}
+
+.widget-title button {
+  background: transparent;
+  border-radius: 6px;
+}
+
+.widget-title button:hover {
+  background-color: @source_color;
+}
+
+.widget-title button:active {
+  background-color: @source_color;
+}
+
+  /* Do not disturb */
+.widget-dnd {
+  margin: 6px;
+  font-size: 1.2rem;
+}
+
+.widget-dnd > switch {
+  background: @surface;
+  font-size: initial;
+  border-radius: 8px;
+  box-shadow: none;
+  padding: 2px;
+}
+
+.widget-dnd > switch:hover {
+  background: @surface;
+}
+
+.widget-dnd > switch:checked {
+  background: @surface;
+}
+
+.widget-dnd > switch:checked:hover {
+  background: @surface;
+}
+
+.widget-dnd > switch slider {
+  background: white;
+  border-radius: 6px;
+}
+
+  /* Buttons menu */
+.widget-buttons-grid {
+  font-size: x-large;
+  justify-content: center;
+  padding: 6px 2px;
+  margin: 6px;
+  border-radius: 15px;
+  background: @background;
+}
+:root {
+  --widget-volume-row-icon-size: 13px;
+}
+.per-app-volume {
+  background-color: @background;
+  margin: 8px;
+  margin-bottom: 0;
+  border-radius: var(--border-radius);
+}
+
+/************** Backlight Widget **************/
+
+
+
+.control-center trough highlight {
+  padding: 5px;
+  background: linear-gradient(0deg, @source_color 0%, @source_color 100%);
+  border-radius: 20px;
+  transition: all 0.4s ease;
+}
+
+.control-center trough highlight:hover {
+  padding: 5px;
+  background: linear-gradient(0deg, @primary 0%, @primary 100%);
+  border-radius: 20px;
+  transition: opacity 0.3s ease;
+}
+
+.widget-slider label {
+  font-size: inherit;
+}
+.widget-volume {
+  margin: 0px 8px;
+}
+.widget-volume scale {
+  margin-left: 12px;
+}
+
+/* Each row app icon */
+.widget-volume row image {
+  -gtk-icon-size: var(--widget-volume-row-icon-size);
+}
+.widget-buttons-grid>flowbox>flowboxchild>button {
+  margin: 4px 10px;
+  padding: 6px 12px;
+  background: transparent;
+  border-radius: 8px;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:hover {
+  background: @source_color;
+}
+.widget-buttons-grid>flowbox>flowboxchild>button:active {
+  background: @source_color;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button.toggle:checked {
+  background: @source_color;
+}
